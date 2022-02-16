@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<script type="text/javascript" language="JavaScript" src="flipmenu.js">
+
+/***********************************************
+* Flip Menu- by Osem Websystems (http://www.osem.nl/)
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+***********************************************/
+
+</script>
+<style type="text/css">
+
+.wireframemenu{
+border: 1px solid #C0C0C0;
+background-color: white;
+border-bottom-width: 0;
+width: 170px;
+position: absolute;
+}
+
+* html .wireframemenu{ /*IE only rule. Original menu width minus all left/right paddings */
+width: 164px;
+}
+
+.wireframemenu ul{
+padding: 0;
+margin: 0;
+list-style-type: none;
+}
+
+.wireframemenu a{
+font: bold 13px Verdana;
+padding: 4px 3px;
+display: block;
+width: 100%; /*Define width for IE6's sake*/
+color: #595959;
+text-decoration: none;
+border-bottom: 1px solid #C0C0C0;
+}
+
+.wireframemenu a:visited{
+color: #595959;
+}
+
+html>body .wireframemenu a{ /*Non IE rule*/
+width: auto;
+}
+
+.wireframemenu a:hover{
+background-color: #F8FBBD;
+color: black;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Static Menu script- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+***********************************************/
+
+//ids of menus to keep static on page (must be absolutely positioned, with left/top attribute added inline inside tag)
+//Separate multiple ids with a comma (ie: ["menu1", "menu2"]
+var staticmenuids=["staticmenu"]
+
+var staticmenuoffsetY=[]
+
+function getmenuoffsetY(){
+	for (var i=0; i<staticmenuids.length; i++){
+		var currentmenu=document.getElementById(staticmenuids[i])
+	 staticmenuoffsetY.push(isNaN(parseInt(currentmenu.style.top))? 0 : parseInt(currentmenu.style.top))
+	}
+		initstaticmenu()
+}
+
+function initstaticmenu(){
+	var iebody=(document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+	var topcorner=(window.pageYOffset)? window.pageYOffset : iebody.scrollTop
+	for (var i=0; i<staticmenuids.length; i++)
+		document.getElementById(staticmenuids[i]).style.top=topcorner+staticmenuoffsetY[i]+"px"
+	setTimeout("initstaticmenu()", 100)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", getmenuoffsetY, false)
+else if (window.attachEvent)
+window.attachEvent("onload", getmenuoffsetY)
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #99FF33;
+}
+-->
+</style></head>
+
+<body>
+<div id="Layer1" style="position:absolute; left:14px; top:9px; width:152px; height:144px; z-index:1">
+  <ul class="flipMenu">
+<li>PRACTICAS
+    <ul>
+   	<li><a href="pasatiempos.htm" target="mainFrame">pasatiempos</a></li>
+   	<li><a href="contacto.htm" target="mainFrame" >contacto</a></li>
+   	<li><a href="SN.htm" target="mainFrame">cv</a></li>
+   	<li><a href="MP3.htm" target="mainFrame">mp3</a></li>
+    <li><a href="pagina 1.htm" target="mainFrame">14 de febrero</a></li>
+    <li><a href="2 de febrero.htm" target="mainFrame">2 de febrero</a></li>
+    </ul>
+</li>
+<li>Web Resources
+    <ul>
+    <li><a href="http://www.dynamicdrive.com">Dynamic HTML</a></li>
+    <li><a href="http://www.codingforums.com">Coding Forums</a></li>
+    <li><a href="http://www.cssdrive.com">CSS Drive</a></li>
+    <li><a href="http://www.dynamicdrive.com/style/">CSS Library</a></li>
+    <li><a href="http://tools.dynamicdrive.com/imageoptimizer/">Image Optimizer</a></li>
+    <li><a href="http://tools.dynamicdrive.com/favicon/">Favicon Generator</a></li>
+				<li>Search Engines
+        <ul>
+								<li style="list-style-image: url(flip_google.gif)"><a href="http://www.google.com">Google</a></li>
+								<li><a href="http://www.yahoo.com">Yahoo</a></li>
+								<li><a href="http://www.altavista.com">Altavista</a></li>
+				  </ul>
+				</li>
+    </ul>
+</li>
+<li><a href="javascript:closeAllFlips()">Hide All</a></li>
+<li><a href="javascript:openAllFlips()">Show All</a></li>
+</ul></div>
+<li></li>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
